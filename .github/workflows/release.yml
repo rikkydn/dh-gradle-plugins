@@ -83,3 +83,25 @@ jobs:
           echo "$new_version" > VERSION
           git tag $new_version
           git push origin main --tags
+
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Grant execute permissions for Gradle
+        run: chmod +x ./gradlew
+
+      - name: Publish JAR to GitHub Packages
+        env:
+          DH_GH_USERNAME: ${{ github.actor }}
+          DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
+        run: ./gradlew publish -Pversion=${latest#v}
