@@ -16,12 +16,6 @@ subprojects {
         mavenCentral()
     }
 
-//    pluginBundle {
-//        website = "https://wiki.int.kn/display/FT/Audit+Outbox+Library"
-//        vcsUrl = "https://git.int.kn/scm/fyit/ctc-plugins.git"
-//        description = "Preconfigured plugin for CTC development"
-//    }
-
     publishing {
         repositories {
             maven {

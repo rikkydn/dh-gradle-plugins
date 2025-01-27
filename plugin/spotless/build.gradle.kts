@@ -3,15 +3,15 @@ plugins {
 }
 
 gradlePlugin {
-    plugins.create("kn-il-spotless-plugin") {
-        id = "com.kn.il-spotless"
-        displayName = "Kn Il Java Plugin"
-        implementationClass = "com.kn.il.plugin.spotless.SpotlessPlugin"
+    plugins.create("dh-spotless-plugin") {
+        id = "by.dh.spotless"
+        displayName = "DH Java Plugin"
+        implementationClass = "by.dh.plugin.spotless.SpotlessPlugin"
     }
 }
 
 dependencies {
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.25.0")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:7.0.2")
     implementation(project(":plugin:java"))
 
     testImplementation(project(":common-test"))

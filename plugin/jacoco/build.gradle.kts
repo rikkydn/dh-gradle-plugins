@@ -3,10 +3,10 @@ plugins {
 }
 
 gradlePlugin {
-    plugins.create("kn-il-jacoco-plugin") {
-        id = "com.kn.il-jacoco"
-        displayName = "Kn Il Jacoco Plugin"
-        implementationClass = "com.kn.il.plugin.jacoco.JacocoPlugin"
+    plugins.create("dh-jacoco-plugin") {
+        id = "by.dh.jacoco"
+        displayName = "DH Jacoco Plugin"
+        implementationClass = "by.dh.plugin.jacoco.JacocoPlugin"
     }
 }
 

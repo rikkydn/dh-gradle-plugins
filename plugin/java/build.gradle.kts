@@ -3,10 +3,10 @@ plugins {
 }
 
 gradlePlugin {
-    plugins.create("kn-il-java-plugin") {
-        id = "com.kn.il-java"
-        displayName = "Kn Il Java Plugin"
-        implementationClass = "com.kn.il.plugin.java.JavaPlugin"
+    plugins.create("dh-java-plugin") {
+        id = "by.dh.java"
+        displayName = "DH Java Plugin"
+        implementationClass = "by.dh.plugin.java.JavaPlugin"
     }
 }
 

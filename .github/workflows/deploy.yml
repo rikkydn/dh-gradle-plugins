@@ -22,8 +22,8 @@ jobs:
       - name: Grant execute permissions for Gradle
         run: chmod +x ./gradlew
 
-      - name: Print Environment Variables
-        run: printenv
+      - name: Test plugins
+        run: ./gradlew test
 
       - name: Publish JAR to GitHub Packages
         env:

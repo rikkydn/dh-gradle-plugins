@@ -35,7 +35,7 @@ public class GradleExecutorUtil {
     return GradleRunner.create()
         .withProjectDir(projectDir)
         .withPluginClasspath()
-        .withArguments(command);
+        .withArguments(command, "--info");
   }
 
 }
