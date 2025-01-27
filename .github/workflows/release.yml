@@ -1,4 +1,4 @@
-name: Merge PR Workflow
+name: Release a new version
 
 on:
   workflow_dispatch: # This ensures the workflow is triggered manually
