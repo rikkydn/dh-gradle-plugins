@@ -109,4 +109,4 @@ jobs:
         env:
           DH_GH_USERNAME: ${{ github.actor }}
           DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
-        run: ./gradlew publish -Pversion=${latest#v}
+        run: ./gradlew publish -Pversion=${{ env.new_version }}
