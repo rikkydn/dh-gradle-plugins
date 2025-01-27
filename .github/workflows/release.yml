@@ -1,12 +1,12 @@
 name: Release a new version
 
 on:
-  workflow_dispatch: # This ensures the workflow is triggered manually
+  workflow_dispatch:
     inputs:
       version_type:
         description: "Version increment type (major, minor, patch)"
         required: true
-        default: "patch" # Default input value
+        default: "patch"
 
 jobs:
   test-and-merge:
