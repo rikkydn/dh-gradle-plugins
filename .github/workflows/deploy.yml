@@ -27,6 +27,6 @@ jobs:
 
       - name: Publish JAR to GitHub Packages
         env:
-          GITHUB_USERNAME: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DH_GH_USERNAME: ${{ github.actor }}
+          DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
         run: ./gradlew publish
