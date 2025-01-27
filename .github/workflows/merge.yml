@@ -1,0 +1,85 @@
+name: Merge PR Workflow
+
+on:
+  workflow_dispatch: # This ensures the workflow is triggered manually
+    inputs:
+      version_type:
+        description: "Version increment type (major, minor, patch)"
+        required: true
+        default: "patch" # Default input value
+
+jobs:
+  test-and-merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Run Gradle tests
+      - name: Run Gradle tests
+        run: ./gradlew test
+
+      # Check if tests passed before allowing merge
+      - name: Ensure tests pass before merge
+        if: failure()
+        run: echo "Tests failed. Cannot merge the PR." && exit 1
+
+  increment-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Fetch all tags to determine the latest version
+      - name: Fetch tags
+        run: git fetch --tags
+
+      # Extract the latest tag
+      - name: Get latest tag
+        id: get_latest_tag
+        run: echo "latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')" >> $GITHUB_ENV
+
+      # Increment the version
+      - name: Increment version
+        id: increment_version
+        run: |
+          latest_version=${latest#v}
+          major=$(echo $latest_version | cut -d. -f1)
+          minor=$(echo $latest_version | cut -d. -f2)
+          patch=$(echo $latest_version | cut -d. -f3)
+
+          case "${{ github.event.inputs.version_type }}" in
+            major)
+              major=$((major + 1))
+              minor=0
+              patch=0
+              ;;
+            minor)
+              minor=$((minor + 1))
+              patch=0
+              ;;
+            patch)
+              patch=$((patch + 1))
+              ;;
+            *)
+              echo "Invalid version type: ${{ github.event.inputs.version_type }}"
+              exit 1
+              ;;
+          esac
+
+          new_version="v${major}.${minor}.${patch}"
+          echo "new_version=$new_version" >> $GITHUB_ENV
+          echo "New version: $new_version"
+
+      # Update the version in the repository
+      - name: Commit and push new version
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          echo "$new_version" > VERSION
+          git tag $new_version
+          git push origin main --tags
