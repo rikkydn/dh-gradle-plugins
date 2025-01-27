@@ -1,4 +1,4 @@
-package com.kn.il.plugin.common;
+package by.dh.plugins.common.dictionary;
 
 import java.io.File;
 import java.util.Map;

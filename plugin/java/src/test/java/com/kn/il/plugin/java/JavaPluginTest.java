@@ -1,8 +1,8 @@
 package com.kn.il.plugin.java;
 
-import static com.kn.il.plugin.common.GradleExecutorUtil.execute;
-import static com.kn.il.plugin.common.GradleInitUtil.createBuildGradle;
-import static com.kn.il.plugin.common.GradleInitUtil.createGradleProperties;
+import static by.dh.plugins.common.dictionary.GradleExecutorUtil.execute;
+import static by.dh.plugins.common.dictionary.GradleInitUtil.createBuildGradle;
+import static by.dh.plugins.common.dictionary.GradleInitUtil.createGradleProperties;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;

@@ -1,7 +1,7 @@
 package com.kn.il.plugin;
 
-import static com.kn.il.plugin.common.GradleExecutorUtil.execute;
-import static com.kn.il.plugin.common.GradleInitUtil.createBuildGradle;
+import static by.dh.plugins.common.dictionary.GradleExecutorUtil.execute;
+import static by.dh.plugins.common.dictionary.GradleInitUtil.createBuildGradle;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

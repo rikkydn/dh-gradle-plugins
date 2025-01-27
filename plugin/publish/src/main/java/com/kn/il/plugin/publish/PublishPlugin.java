@@ -1,11 +1,11 @@
 package com.kn.il.plugin.publish;
 
-import static com.kn.il.common.dictionary.MavenRepositoryDictionary.ILCL_PASSWORD_ENV;
-import static com.kn.il.common.dictionary.MavenRepositoryDictionary.ILCL_REPOSITORY_URL;
-import static com.kn.il.common.dictionary.MavenRepositoryDictionary.ILCL_USERNAME_ENV;
-import static com.kn.il.common.dictionary.PluginVarsDictionary.GIT_URL;
-import static com.kn.il.common.dictionary.PluginVarsDictionary.GROUP_ID;
-import static com.kn.il.common.dictionary.PluginVarsDictionary.WIKI_URL;
+import static by.dh.plugins.common.dictionary.MavenRepositoryDictionary.ILCL_PASSWORD_ENV;
+import static by.dh.plugins.common.dictionary.MavenRepositoryDictionary.ILCL_REPOSITORY_URL;
+import static by.dh.plugins.common.dictionary.MavenRepositoryDictionary.ILCL_USERNAME_ENV;
+import static by.dh.plugins.common.dictionary.PluginVarsDictionary.GIT_URL;
+import static by.dh.plugins.common.dictionary.PluginVarsDictionary.GROUP_ID;
+import static by.dh.plugins.common.dictionary.PluginVarsDictionary.WIKI_URL;
 import static java.lang.String.format;
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;

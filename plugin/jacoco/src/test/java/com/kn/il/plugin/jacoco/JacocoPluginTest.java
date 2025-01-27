@@ -1,10 +1,10 @@
 package com.kn.il.plugin.jacoco;
 
-import static com.kn.il.plugin.common.GradleExecutorUtil.execute;
-import static com.kn.il.plugin.common.GradleExecutorUtil.executeFailed;
-import static com.kn.il.plugin.common.GradleInitUtil.createBuildGradle;
-import static com.kn.il.plugin.common.GradleInitUtil.createGradleProperties;
-import static com.kn.il.plugin.common.GradleInitUtil.createJavaClass;
+import static by.dh.plugins.common.dictionary.GradleExecutorUtil.execute;
+import static by.dh.plugins.common.dictionary.GradleExecutorUtil.executeFailed;
+import static by.dh.plugins.common.dictionary.GradleInitUtil.createBuildGradle;
+import static by.dh.plugins.common.dictionary.GradleInitUtil.createGradleProperties;
+import static by.dh.plugins.common.dictionary.GradleInitUtil.createJavaClass;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;

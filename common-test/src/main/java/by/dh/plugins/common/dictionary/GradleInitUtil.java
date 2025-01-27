@@ -1,4 +1,4 @@
-package com.kn.il.plugin.common;
+package by.dh.plugins.common.dictionary;
 
 import static java.io.File.separator;
 import static java.nio.charset.StandardCharsets.UTF_8;

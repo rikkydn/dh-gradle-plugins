@@ -7,8 +7,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.projectlombok:lombok:1.18.30")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    compileOnly("org.projectlombok:lombok:${property("by.dh.versions.lombok")}")
+    annotationProcessor("org.projectlombok:lombok:${property("by.dh.versions.lombok")}")
 
     implementation(gradleTestKit())
 }

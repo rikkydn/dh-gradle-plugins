@@ -10,7 +10,7 @@ subprojects {
     apply(plugin = "java-gradle-plugin")
     apply(plugin = "com.gradle.plugin-publish")
 
-    group = "com.kn.il.plugins"
+    group = "by.dh.plugins"
 
     repositories {
         mavenCentral()
@@ -36,8 +36,8 @@ subprojects {
     }
 
     dependencies {
-        testCompileOnly("org.projectlombok:lombok:1.18.30")
-        testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
+        testCompileOnly("org.projectlombok:lombok:${property("by.dh.versions.lombok")}")
+        testAnnotationProcessor("org.projectlombok:lombok:${property("by.dh.versions.lombok")}")
 
         testImplementation(gradleTestKit())
         testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.2")

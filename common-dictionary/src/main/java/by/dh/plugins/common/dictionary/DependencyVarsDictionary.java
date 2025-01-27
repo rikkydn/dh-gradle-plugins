@@ -1,4 +1,4 @@
-package com.kn.il.common.dictionary;
+package by.dh.plugins.common.dictionary;
 
 import lombok.experimental.UtilityClass;
 
