@@ -1,12 +1,12 @@
-name: Publish to GitHub Packages
+name: Verification
 
-#on:
-#  push:
-#    branches:
-#      - main
+on:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
-  publish:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,11 +22,5 @@ jobs:
       - name: Grant execute permissions for Gradle
         run: chmod +x ./gradlew
 
-      - name: Test plugins
+      - name: Test
         run: ./gradlew test
-
-      - name: Publish JAR to GitHub Packages
-        env:
-          DH_GH_USERNAME: ${{ github.actor }}
-          DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
-        run: ./gradlew publish
