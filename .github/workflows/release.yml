@@ -44,7 +44,10 @@ jobs:
           echo "tags fetched"
           echo $(git tag)
           echo "tags displayed"
-          echo "latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')" >> $GITHUB_ENV
+          latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')
+          echo $latest
+          echo "tag found"
+          echo "$latest" >> $GITHUB_ENV
 
       - name: Increment version
         id: increment_version
