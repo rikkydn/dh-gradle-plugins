@@ -37,8 +37,7 @@ jobs:
       - name: Get latest tag
         id: get_latest_tag
         run: |
-          git config --global fetch.pruneTags true
-          git fetch --tags
+          git fetch --tags --force
           echo "latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')" >> $GITHUB_ENV
 
       - name: Increment version
