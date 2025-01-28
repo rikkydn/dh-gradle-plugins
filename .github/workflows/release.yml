@@ -74,6 +74,7 @@ jobs:
 
           new_version="v${major}.${minor}.${patch}"
           echo "new_version=$new_version" >> $GITHUB_ENV
+          echo "New version is $new_version"
           echo "::set-output name=new_version::$new_version"
 
       # Update the version in the repository
@@ -87,6 +88,11 @@ jobs:
           echo "$new_version" > VERSION
           git tag $new_version
           git push origin main --tags
+
+      - name: Debug new version
+        run: |
+          echo "New version: ${{ env.new_version }}"
+
 
   publish:
     runs-on: ubuntu-latest
@@ -104,6 +110,10 @@ jobs:
 
       - name: Grant execute permissions for Gradle
         run: chmod +x ./gradlew
+
+      - name: Debug new version
+        run: |
+          echo "New version: ${{ env.new_version }}"
 
       - name: Publish JAR to GitHub Packages
         env:
