@@ -31,20 +31,15 @@ jobs:
     needs: test
 
     steps:
-      # Checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Fetch all tags to determine the latest version
-      - name: Fetch tags
-        run: git fetch --tags
-
-      # Extract the latest tag
       - name: Get latest tag
         id: get_latest_tag
-        run: echo "latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')" >> $GITHUB_ENV
+        run: |
+          git fetch --tags
+          echo "latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')" >> $GITHUB_ENV
 
-      # Increment the version
       - name: Increment version
         id: increment_version
         run: |
