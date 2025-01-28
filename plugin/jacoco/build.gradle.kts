@@ -9,6 +9,7 @@ gradlePlugin {
         implementationClass = "by.dh.plugin.jacoco.JacocoPlugin"
         website = "https://github.com/rikkydn/dh-gradle-plugins"
         vcsUrl = "https://github.com/rikkydn/dh-gradle-plugins"
+        description = "Preconfigured jacoco plugin"
     }
 }
 
