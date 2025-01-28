@@ -75,7 +75,7 @@ jobs:
           new_version="v${major}.${minor}.${patch}"
           echo "new_version=$new_version" >> $GITHUB_ENV
           echo "New version is $new_version"
-          echo "::set-output name=new_version::$new_version"
+          echo "{new_version}=$new_version" >> $GITHUB_OUTPUT
 
       # Update the version in the repository
       - name: Commit and push new version
@@ -91,7 +91,7 @@ jobs:
 
       - name: Debug new version
         run: |
-          echo "New version: ${{ env.new_version }}"
+          echo "New version: ${{ needs.increment-version.outputs.new_version }}"
 
 
   publish:
