@@ -49,6 +49,7 @@ jobs:
         id: increment_version
         run: |
           latest_version=${latest#v}
+          echo $latest_version
           major=$(echo $latest_version | cut -d. -f1)
           minor=$(echo $latest_version | cut -d. -f2)
           patch=$(echo $latest_version | cut -d. -f3)
@@ -75,7 +76,7 @@ jobs:
           new_version="v${major}.${minor}.${patch}"
           echo "new_version=$new_version" >> $GITHUB_ENV
           echo "New version is $new_version"
-          echo "{new_version}=$new_version" >> $GITHUB_OUTPUT
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
       # Update the version in the repository
       - name: Commit and push new version
@@ -113,6 +114,7 @@ jobs:
 
       - name: Debug new version
         run: |
+          echo "output: ${{ needs.increment-version.envs.new_version }}"
           echo "New version: ${{ needs.increment-version.outputs.new_version }}"
 
       - name: Publish JAR to GitHub Packages
