@@ -42,13 +42,9 @@ jobs:
         id: get_latest_tag
         run: |
           git fetch --tags --force
-          echo "tags fetched"
-          echo $(git tag)
-          echo "tags displayed"
           latest=$(git describe --tags --abbrev=0 || echo 'v0.0.0')
-          echo $latest
-          echo "tag found"
-          echo "$latest" >> $GITHUB_ENV
+          echo "$latest"
+          echo "latest=$latest" >> $GITHUB_ENV
 
       - name: Increment version
         id: increment_version
