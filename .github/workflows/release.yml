@@ -122,7 +122,4 @@ jobs:
           DH_GH_USERNAME: ${{ github.actor }}
           DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
         run: |
-          ./gradlew :plugin:dictionary:publish -Pversion=${{ needs.increment-version.outputs.new_version }}
-          ./gradlew :plugin:jacoco:publish -Pversion=${{ needs.increment-version.outputs.new_version }}
-          ./gradlew :plugin:java:publish -Pversion=${{ needs.increment-version.outputs.new_version }}
-          ./gradlew :plugin:spotless:publish -Pversion=${{ needs.increment-version.outputs.new_version }}
+          ./gradlew publishPlugins -Pversion=${{ needs.increment-version.outputs.new_version }}
