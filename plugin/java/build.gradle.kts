@@ -7,6 +7,8 @@ gradlePlugin {
         id = "by.dh.java"
         displayName = "DH Java Plugin"
         implementationClass = "by.dh.plugin.java.JavaPlugin"
+        website = "https://github.com/rikkydn/dh-gradle-plugins"
+        vcsUrl = "https://github.com/rikkydn/dh-gradle-plugins"
     }
 }
 

@@ -7,6 +7,8 @@ gradlePlugin {
         id = "by.dh.spotless"
         displayName = "DH Java Plugin"
         implementationClass = "by.dh.plugin.spotless.SpotlessPlugin"
+        website = "https://github.com/rikkydn/dh-gradle-plugins"
+        vcsUrl = "https://github.com/rikkydn/dh-gradle-plugins"
     }
 }
 
