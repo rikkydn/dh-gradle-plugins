@@ -113,10 +113,10 @@ jobs:
 
       - name: Debug new version
         run: |
-          echo "New version: ${{ env.new_version }}"
+          echo "New version: ${{ needs.increment-version.outputs.new_version }}"
 
       - name: Publish JAR to GitHub Packages
         env:
           DH_GH_USERNAME: ${{ github.actor }}
           DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
-        run: ./gradlew publish -Pversion=${{ env.new_version }}
+        run: ./gradlew publish -Pversion=${{ needs.increment-version.outputs.new_version }}
