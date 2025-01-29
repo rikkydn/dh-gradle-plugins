@@ -38,7 +38,7 @@ jobs:
         with:
           ref: main
           fetch-tags: true
-          fetch-depth: 20
+          fetch-depth: 100
 
       - name: Get latest tag
         id: get_latest_tag
