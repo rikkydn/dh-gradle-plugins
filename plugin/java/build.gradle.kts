@@ -10,6 +10,7 @@ gradlePlugin {
         website = "https://github.com/rikkydn/dh-gradle-plugins"
         vcsUrl = "https://github.com/rikkydn/dh-gradle-plugins"
         description = "Preconfigured java plugin"
+        tags.set(listOf("java"))
     }
 }
 
