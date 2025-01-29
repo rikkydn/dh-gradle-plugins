@@ -7,6 +7,10 @@ gradlePlugin {
         id = "by.dh.jacoco"
         displayName = "DH Jacoco Plugin"
         implementationClass = "by.dh.plugin.jacoco.JacocoPlugin"
+        website = "https://github.com/rikkydn/dh-gradle-plugins"
+        vcsUrl = "https://github.com/rikkydn/dh-gradle-plugins"
+        description = "Preconfigured jacoco plugin"
+        tags.set(listOf("jacoco"))
     }
 }
 

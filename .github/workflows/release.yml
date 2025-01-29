@@ -121,9 +121,10 @@ jobs:
         env:
           DH_GH_USERNAME: ${{ github.actor }}
           DH_GH_TOKEN: ${{ secrets.DH_GH_TOKEN }}
-          GRADLE_PUBLISH_SECRET: ${{ secrets.DH_GH_TOKEN }}
+          GRADLE_PUBLISH_KEY: ${{ secrets.GRADLE_PUBLISH_KEY }}
+          GRADLE_PUBLISH_SECRET: ${{ secrets.GRADLE_PUBLISH_SECRET }}
         run: |
           ./gradlew :plugin:dictionary:publish -Pversion=${{ needs.increment-version.outputs.new_version }}
-          ./gradlew :plugin:jacoco:publish -Pversion=${{ needs.increment-version.outputs.new_version }}
+          ./gradlew :plugin:jacoco:publishPlugins -Pversion=${{ needs.increment-version.outputs.new_version }}
           ./gradlew :plugin:java:publishPlugins -Pversion=${{ needs.increment-version.outputs.new_version }}
           ./gradlew :plugin:spotless:publishPlugins -Pversion=${{ needs.increment-version.outputs.new_version }}
