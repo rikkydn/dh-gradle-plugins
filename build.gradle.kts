@@ -21,6 +21,10 @@ subprojects {
             maven {
                 name = "dh.gradle.plugin"
                 url = uri("https://maven.pkg.github.com/rikkydn/dh-gradle-plugins")
+                credentials {
+                    username = System.getenv("DH_GH_USERNAME")
+                    password = System.getenv("DH_GH_TOKEN")
+                }
             }
         }
     }
